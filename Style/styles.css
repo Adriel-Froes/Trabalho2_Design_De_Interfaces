@@ -1,0 +1,215 @@
+/* ----------------------------------------
+   Estilos gerais (tipografia, cores, etc.)
+---------------------------------------- */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: oklch(82.8% 0.111 230.318);
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ----------------------------------------
+   Header (navegação e título)
+---------------------------------------- */
+header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+/* ----------------------------------------
+   Main content (seções principais)
+---------------------------------------- */
+main {
+    padding: 20px;
+}
+
+/* ----------------------------------------
+   Seções (Sobre, Livros, etc.)
+---------------------------------------- */
+section {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------
+   Conteúdo da seção (imagens, textos, etc.)
+---------------------------------------- */
+.conteudo-secao {
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo-secao img {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.conteudo-secao p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.conteudo-secao ul {
+    padding-left: 20px;
+    text-align: center;
+}
+
+/* ----------------------------------------
+   Seção de Livros (sem grid, utilizando flexbox)
+---------------------------------------- */
+.livros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.livro {
+    text-align: center;
+    width: calc(33.333% - 20px); /* 3 colunas responsivas */
+    margin-bottom: 20px;
+}
+
+.livro img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ----------------------------------------
+   Footer
+---------------------------------------- */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ----------------------------------------
+   Media Queries (responsividade)
+---------------------------------------- */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    .conteudo-secao {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .conteudo-secao > *:first-child {
+        margin-right: 20px;
+        width: 45%;
+    }
+
+    .conteudo-secao > *:last-child {
+        margin-left: 20px;
+        width: 45%;
+    }
+
+    #servicos .conteudo-secao {
+        flex-direction: column;
+    }
+
+    #servicos .conteudo-secao ul,
+    #servicos .conteudo-secao img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .conteudo-secao {
+        max-width: 1140px;
+    }
+
+    .livro {
+        width: calc(25% - 20px); /* 4 colunas em telas grandes */
+    }
+}
+
+@media (max-width: 768px) {
+    .livro {
+        width: calc(50% - 20px); /* 2 colunas para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .livro {
+        width: 100%; /* 1 coluna para telas pequenas */
+    }
+}
