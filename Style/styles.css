@@ -1,11 +1,8 @@
-/* ----------------------------------------
-   Estilos gerais (tipografia, cores, etc.)
----------------------------------------- */
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: oklch(82.8% 0.111 230.318);
+    background-color: rgb(108, 218, 218);
     color: #333;
 }
 
@@ -28,9 +25,6 @@ ul {
     margin: 0;
 }
 
-/* ----------------------------------------
-   Header (navegação e título)
----------------------------------------- */
 header {
     background-color: #fff;
     padding: 20px;
@@ -63,16 +57,10 @@ nav ul li:last-child {
     margin-right: 0;
 }
 
-/* ----------------------------------------
-   Main content (seções principais)
----------------------------------------- */
 main {
     padding: 20px;
 }
 
-/* ----------------------------------------
-   Seções (Sobre, Livros, etc.)
----------------------------------------- */
 section {
     background-color: #fff;
     margin-bottom: 30px;
@@ -90,9 +78,6 @@ section h2 {
     margin-bottom: 20px;
 }
 
-/* ----------------------------------------
-   Conteúdo da seção (imagens, textos, etc.)
----------------------------------------- */
 .conteudo-secao {
     max-width: 960px;
     width: 100%;
@@ -119,10 +104,7 @@ section h2 {
     text-align: center;
 }
 
-/* ----------------------------------------
-   Seção de Livros (sem grid, utilizando flexbox)
----------------------------------------- */
-.livros {
+.lista-livros {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -130,21 +112,19 @@ section h2 {
     margin-top: 20px;
 }
 
-.livro {
+.lista-livros li {
     text-align: center;
-    width: calc(33.333% - 20px); /* 3 colunas responsivas */
+    width: calc(33.333% - 20px);
     margin-bottom: 20px;
 }
 
-.livro img {
+.lista-livros li img {
     width: 100%;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
-/* ----------------------------------------
-   Footer
----------------------------------------- */
 footer {
     background-color: #333;
     color: #fff;
@@ -152,9 +132,6 @@ footer {
     padding: 20px;
 }
 
-/* ----------------------------------------
-   Media Queries (responsividade)
----------------------------------------- */
 @media (min-width: 768px) {
     header {
         flex-direction: row;
@@ -197,19 +174,19 @@ footer {
         max-width: 1140px;
     }
 
-    .livro {
-        width: calc(25% - 20px); /* 4 colunas em telas grandes */
+    .lista-livros li {
+        width: calc(25% - 20px); 
     }
 }
 
 @media (max-width: 768px) {
-    .livro {
-        width: calc(50% - 20px); /* 2 colunas para telas menores */
+    .lista-livros li {
+        width: calc(50% - 20px); 
     }
 }
 
 @media (max-width: 480px) {
-    .livro {
-        width: 100%; /* 1 coluna para telas pequenas */
+    .lista-livros li {
+        width: 100%; 
     }
 }
